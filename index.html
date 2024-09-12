@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Job Search Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0060C1;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 5px 10px;
+            background-color: #f9f9f9;
+            flex: 1;
+            max-width: 300px;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .search-bar button {
+            background-color: #0060C1;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .auth-buttons a {
+            text-decoration: none;
+            color: #0060C1;
+            font-weight: 500;
+            padding: 5px 10px;
+            border: 1px solid #0060C1;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #0060C1;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url(https://media.istockphoto.com/id/1320329824/vector/vector-of-a-diverse-group-of-people-of-different-professions-and-occupations.jpg?s=612x612&w=0&k=20&c=xVNGIf3RKBkeOltYfN0W-97rNmMjZ8A__dOkKobK2GE=);
+            color: black;
+            padding: 50px 0;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: white;
+            background-size: auto;
+            background-position: left;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        /* Featured Jobs Section */
+        .featured-jobs {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .featured-jobs h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        /* Job Grid Layout */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Job Card */
+        .job-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .job-card:hover {
+            transform: scale(1.05);
+        }
+
+        .job-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .job-card p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        .job-card button {
+            background-color: #0060C1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .job-card button:hover {
+            background-color: #033464;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .job-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-card {
+                padding: 15px;
+            }
+
+            .job-card h3 {
+                font-size: 1.3em;
+            }
+
+            .job-card p {
+                font-size: 0.9em;
+            }
+
+            .job-card button {
+                font-size: 0.9em;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .job-card h3 {
+                font-size: 1.1em;
+            }
+
+            .job-card p {
+                font-size: 0.85em;
+            }
+
+            .job-card button {
+                font-size: 0.85em;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">JobTrail</div>
+        <div class="nav-links">
+            <a href="#">Jobs</a>
+            <a href="#">Companies</a>
+            <a href="#">Services</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search jobs, companies...">
+            <button>Search</button>
+        </div>
+        <div class="auth-buttons">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find and Apply for Your Dream Job</h1>
+        <p>Explore job opportunities, apply directly, and connect with employers.</p>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-jobs">
+        <h2>Featured Jobs</h2>
+        <div class="job-grid">
+            <div class="job-card">
+                <h3>Software Engineer</h3>
+                <p><strong>Company:</strong> Infosys</p>
+                <p><strong>Location:</strong> chandigarh</p>
+                <p><strong>Qualifications:</strong> Bachelor's Degree in Computer Science</p>
+                <p><strong>Salary:</strong> ₹85,000 - ₹120,000</p>
+                <p><strong>Deadline:</strong> October 5, 2024</p>
+                <p><strong>Description:</strong> Develop and maintain web applications for a global audience.</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h3>Data Analyst</h3>
+                <p><strong>Company:</strong> eClerx</p>
+                <p><strong>Location:</strong> Chandigarh</p>
+                <p><strong>Qualifications:</strong> Bachelor's Degree in Data Science</p>
+                <p><strong>Salary:</strong> ₹70,000 - ₹95,000</p>
+                <p><strong>Deadline:</strong> September 25, 2024</p>
+                <p><strong>Description:</strong> Analyze large datasets and provide actionable insights.</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h3>Marketing Manager</h3>
+                <p><strong>Company:</strong> Xerox</p>
+                <p><strong>Location:</strong> Gurgaon</p>
+                <p><strong>Qualifications:</strong> Bachelor's in Business or Marketing</p>
+                <p><strong>Salary:</strong> ₹90,000 - ₹110,000</p>
+                <p><strong>Deadline:</strong> October 15, 2024</p>
+                <p><strong>Description:</strong> Lead marketing campaigns to drive customer engagement.</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 JobBoard Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
