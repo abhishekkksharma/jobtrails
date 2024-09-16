@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            line-height: 1.6;
+            background-image: url(https://images.unsplash.com/photo-1604856420566-576ba98b53cd?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);     
+            background-repeat: no-repeat;
+            background-size:cover;   
+        }
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            margin-bottom: 20px;
+        }
+        .company-image{
+            display: grid;
+            grid-template-columns: 70px 1fr;
+        }
+
+        .job-card:hover {
+            transform: scale(1.05);
+        }
+
+        .job-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .job-card p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .job-card button {
+            background-color: #0060C1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        .job-card button:hover {
+            background-color: #033464;
+        }
+        h1{
+            margin-bottom: 40px;
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 40px 40px;
+            opacity: 0.9;
+            font-weight: 800;
+            text-shadow: 0 4px 8px rgba(34, 53, 76, 0.9);
+            
+        }
+        </style>
+</head>
+<body>
+    <h1>Our Partner companies</h1>
+    <div class="job-grid">
+        <div class="job-card">
+            <div class="company-image"><img src="https://storage.googleapis.com/5paisa-prod-storage/files/2021-12/eclerx--600.png" style="width: 70px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 40px;"><h3> eClerx</h3></div></div>
+            <p><strong>Company:</strong> eClerx</p>
+            <p><strong>Location:</strong> Chandigarh</p>
+            <p><strong>Relocation:</strong> Required</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+        <div class="job-card">
+            <div class="company-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1024px-Microsoft_logo_%282012%29.svg.png" style="width: 120px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 80px;"><h3> MicroSoft</h3></div></div>
+            <p><strong>Company:</strong> MicroSoft</p>
+            <p><strong>Location:</strong> Gurgaon</p>
+            <p><strong>Relocation:</strong> Not required/work from home</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+        <div class="job-card">
+            <div class="company-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/910px-SAP_2011_logo.svg.png" style="width: 70px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 40px;"><h3> SAP</h3></div></div>
+            <p><strong>Company:</strong> SAP</p>
+            <p><strong>Location:</strong> Banglore</p>
+            <p><strong>Relocation:</strong> Required</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+    </div>
+    <div class="job-grid">
+        <div class="job-card">
+            <div class="company-image"><img src="https://www.shoreagents.com/wp-content/uploads/2023/03/Zoho.png" style="width: 70px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 40px;"><h3> Zoho</h3></div></div>
+            <p><strong>Company:</strong> Zoho</p>
+            <p><strong>Location:</strong> Gurgaon</p>
+            <p><strong>Relocation:</strong> Not required/work from home</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+        <div class="job-card">
+            <div class="company-image"><img src="https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Emblem-700x394.png" style="width: 70px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 40px;"><h3> Amazon web services</h3></div></div>
+            <p><strong>Company:</strong> Amazon web services</p>
+            <p><strong>Location:</strong> Noida</p>
+            <p><strong>Relocation:</strong> Required</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+        <div class="job-card">
+            <div class="company-image"><img src="https://nds-association.org/wp-content/uploads/2022/10/MMI_Logo_730px-1.png" style="width: 70px; border-radius: 4px; display: inline-block;"> <div style="margin-left: 40px;"><h3> MapmyIndia</h3></div></div>
+            <p><strong>Company:</strong> MapmyIndia</p>
+            <p><strong>Location:</strong> Hydrabad</p>
+            <p><strong>Relocation:</strong> Required</p>
+            <p><strong>Description:</strong> one of India's leading process management and data analytics companie</p>
+            <button onclick="window.location.href='https://abhishekkksharma.github.io/jobtrails/login.html';">Apply Now</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>
