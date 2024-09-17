@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -77,9 +79,32 @@
             font-family: Arial, Helvetica, sans-serif;
             padding: 40px 40px;
             opacity: 0.9;
-            font-weight: 800;
+            font-weight: 600;
             text-shadow: 0 4px 8px rgba(34, 53, 76, 0.9);
             
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            color: #f0f0f0;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #bbbbbb;
         }
         </style>
 </head>
@@ -138,6 +163,16 @@
         </div>
     </div>
 
-    
+    <footer>
+        <div class="social-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+        <p>&copy; 2024 JobBoard Inc. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
