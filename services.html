@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JobTrails</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('https://images.unsplash.com/photo-1604856420566-576ba98b53cd?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: sticky;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0060C1;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 5px 10px;
+            background-color: #f9f9f9;
+            flex: 1;
+            max-width: 300px;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: transparent;
+            font-size: 14px;
+            flex: 1;
+        }
+
+        .search-bar button {
+            background-color: #0060C1;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .auth-buttons a {
+            text-decoration: none;
+            color: #0060C1;
+            font-weight: 500;
+            padding: 5px 10px;
+            border: 1px solid #0060C1;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #0060C1;
+            color: white;
+        }
+
+        .logo1 {
+            font-size: 60px; /* Larger logo */
+            color: white; /* White color for logo */
+            text-align: center;
+            margin-top: 80px; /* Space from the top */
+        }
+
+        .image-logo {
+            display: grid;
+            grid-template-columns: 15px 1fr;
+        }
+
+        .imageof {
+            width: 250px;
+            margin-right: 0px;
+            margin-left: 400px;
+            margin-top: 0px;
+        }
+
+        .logo1 {
+            margin-left: 0px;
+        }
+
+        main {
+            padding: 20px; /* General padding */
+        }
+
+        .about-section {
+            padding: 30px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* White with transparency */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff; /* Blue for headings */
+            font-size: 32px; /* Increased heading size */
+        }
+
+        p {
+            font-size: 20px; /* Larger paragraph text */
+        }
+
+        .challenges {
+            margin-top: 20px;
+        }
+
+        .challenge {
+            background-color: rgba(209, 231, 253, 0.9); /* Light blue for challenges with transparency */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 1em;
+            margin-top: 0px;
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">JobTrails</div>
+        <div class="nav-links">
+            <a href="index.html">Jobs</a>
+            <a href="companies.html">Companies</a>
+            <a href="services.html">Services</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search jobs, companies...">
+            <button>Search</button>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html">Login</a>
+            <a href="login.html">Register</a>
+        </div>
+    </div>
+    <div class="image-logo">
+        <div><img class="imageof" src="C:\Users\amans\Downloads\3f00254c82d7ce53d4b89120ac8b472e-removebg-preview.png" alt=""></div>
+        <div><h1 class="logo1">JobTrails</h1></div>
+    </div>
+    <main>
+        <section class="about-section">
+            <h2>About Us</h2>
+            <p>Welcome to JobTrails! We provide a platform where people can find jobs with ease. Our mission is to connect job seekers with employers in a user-friendly and efficient manner. Whether you are looking for full-time positions, part-time work, or freelance opportunities, JobTrails is here to help you navigate your career path smoothly.</p>
+            <div class="challenges">
+                <h3>Challenges We Address</h3>
+                <div class="challenge">
+                    <strong>1. Overwhelming Options:</strong> Many job seekers feel lost among countless job listings across various websites.
+                </div>
+                <div class="challenge">
+                    <strong>2. Lack of Personalization:</strong> Most platforms provide generic listings that do not cater to individual preferences and skills.
+                </div>
+                <div class="challenge">
+                    <strong>3. Complicated Application Processes:</strong> Lengthy and confusing application forms can discourage candidates from applying.
+                </div>
+                <div class="challenge">
+                    <strong>4. Limited Communication:</strong> Difficulty in reaching out to employers for clarifications or updates can be frustrating.
+                </div>
+                <p>At JobTrails, we streamline the job search process by offering tailored listings, a simplified application process, and effective communication channels to enhance your job-seeking experience.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 JobTrails. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
