@@ -2,7 +2,7 @@
 
 Project Title: JobTrails
 
-Developer: Abhishek Sharma
+Developers: Abhishek Sharma, Aman Singh, Ananta sharma
 
 Course: First-Year B.Tech in Computer Science Engineering
 
