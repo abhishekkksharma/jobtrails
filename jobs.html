@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listings</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url(https://images.unsplash.com/photo-1663587482482-444c06006d00?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8fA%3D%3D);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; /* Center the background image */
+        background-attachment: fixed;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        width: 100%;
+      }
+      .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .navbar .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .navbar .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .navbar .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .auth-buttons a {
+        text-decoration: none;
+        color: #0060c1;
+        font-weight: 500;
+        padding: 5px 10px;
+        border: 1px solid #0060c1;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .auth-buttons a:hover {
+        background-color: #0060c1;
+        color: white;
+      }
+
+      .job-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 150px 0px;
+        padding: 20px 10%; /* Added padding to the top and bottom */
+      }
+
+      .job-card {
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 20px;
+        width: calc(25% - 5px); /* 4 cards per row */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 10px 0; /* Reduced vertical gap */
+      }
+
+      .job-card:hover {
+        transform: translateY(-10px);
+        background-color: #e0f7fa; /* Light hover background */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .job-type {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      .job-type.finance {
+        color: #00796b;
+      }
+      .job-type.software {
+        color: #1976d2;
+      }
+      .job-type.hr {
+        color: #388e3c;
+      }
+      .job-type.business {
+        color: #ff8f00;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+        text-align: left;
+      }
+
+      .location {
+        font-size: 16px;
+        margin-bottom: 10px; /* Reduced gap */
+        color: #555;
+        text-align: left;
+      }
+
+      .date {
+        font-size: 14px;
+        color: #999;
+        text-align: left;
+      }
+      .container-footer {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        margin-right: 50px;
+      }
+
+      .newsletter {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .newsletter h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: black;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .newsletter p {
+        margin-bottom: 20px;
+      }
+
+      .email-form {
+        display: inline-flex;
+        border: 1px solid #333;
+      }
+
+      .email-form input[type="email"] {
+        padding: 10px;
+        border: none;
+        outline: none;
+        width: 300px;
+        font-size: 16px;
+      }
+
+      .email-form button {
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+        margin-bottom: 40px;
+      }
+
+      .footer-section {
+        width: 30%;
+      }
+
+      .footer-section h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul {
+        list-style-type: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .footer-section.bio p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+      }
+
+      .copyright {
+        text-align: center;
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      @media (max-width: 480px) {
+        .email-form input[type="email"] {
+          padding: 8px;
+          border: none;
+          outline: none;
+          width: 250px;
+          font-size: 16px;
+        }
+        .navbar {
+          flex-direction: column;
+          padding: 10px;
+        }
+        .copyright {
+          text-align: center;
+          margin: -20px 0px -20px 0px;
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        .job-card {
+          width: calc(33.33% - 5px); /* 3 cards per row */
+        }
+      }
+
+      @media (max-width: 800px) {
+        .job-card {
+          width: calc(50% - 5px); /* 2 cards per row */
+        }
+        .navbar {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .job-card {
+          width: 100%; /* 1 card per row */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">JobTrails</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#jobs">Jobs</a>
+          <a href="#">Resources</a>
+          <a href="#support">Support</a>
+          <a href="build-resume.html">CV</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="login.html">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="job-cards">
+      <div class="job-card">
+        <div class="job-type finance">Financial Consultant</div>
+        <h2>Financial Analyst</h2>
+        <p class="location">📍 San Diego, CA | Full Time</p>
+        <p class="date">June 8, 2022 by <strong>Gramware</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type software">Software Engineering</div>
+        <h2>Fullstack Web Developer</h2>
+        <p class="location">📍 San Francisco, CA | Internship</p>
+        <p class="date">June 8, 2022 by <strong>Sysprosoft</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type hr">Human Resources Expert</div>
+        <h2>Human Resources Coordinator</h2>
+        <p class="location">📍 San Diego, CA | Full Time</p>
+        <p class="date">June 8, 2022 by <strong>DataRes</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type business">Business Development</div>
+        <h2>Technical Writer</h2>
+        <p class="location">📍 Los Angeles, CA | Remote</p>
+        <p class="date">June 7, 2022 by <strong>Craftgenics</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type finance">Investment Analyst</div>
+        <h2>Equity Analyst</h2>
+        <p class="location">📍 New York, NY | Full Time</p>
+        <p class="date">July 15, 2022 by <strong>FinCorp</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type software">Software Development</div>
+        <h2>Backend Developer</h2>
+        <p class="location">📍 Austin, TX | Contract</p>
+        <p class="date">August 20, 2022 by <strong>TechSolutions</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type hr">Talent Acquisition</div>
+        <h2>Recruitment Specialist</h2>
+        <p class="location">📍 Chicago, IL | Full Time</p>
+        <p class="date">September 5, 2022 by <strong>PeopleFirst</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type business">Sales Strategy</div>
+        <h2>Business Analyst</h2>
+        <p class="location">📍 Seattle, WA | Full Time</p>
+        <p class="date">October 10, 2022 by <strong>MarketMakers</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type finance">Financial Advisory</div>
+        <h2>Financial Advisor</h2>
+        <p class="location">📍 Miami, FL | Part Time</p>
+        <p class="date">November 1, 2022 by <strong>WealthTrust</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type software">Product Development</div>
+        <h2>Mobile App Developer</h2>
+        <p class="location">📍 Denver, CO | Internship</p>
+        <p class="date">December 12, 2022 by <strong>AppCraft</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type hr">Workplace Culture</div>
+        <h2>HR Manager</h2>
+        <p class="location">📍 Boston, MA | Full Time</p>
+        <p class="date">January 20, 2023 by <strong>CultureBuilders</strong></p>
+      </div>
+
+      <div class="job-card">
+        <div class="job-type business">Marketing Strategy</div>
+        <h2>Marketing Coordinator</h2>
+        <p class="location">📍 San Jose, CA | Full Time</p>
+        <p class="date">February 5, 2023 by <strong>BrandMasters</strong></p>
+      </div>
+    </div>
+
+    <div class="container-footer">
+      <section class="newsletter">
+        <h2>Explore Your Potential</h2>
+        <p>
+          Find the best job beacause you are the best!Enter Your Emaail and
+          coonect with us
+        </p>
+        <form class="email-form">
+          <input type="email" placeholder="Enter your email here*" required />
+          <button type="submit">Connect</button>
+        </form>
+      </section>
+
+      <footer>
+        <div class="footer-section about">
+          <h3>ABOUT</h3>
+          <ul>
+            <li><a href="#">Our Vission</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section help">
+          <h3>HELP</h3>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="#" id="support">Email us at: support@jobtrails.co.in</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section bio">
+          <p>"Let us fulfill your dream of getting your dream job"</p>
+        </div>
+      </footer>
+
+      <div class="copyright">
+        <p>© 2020 by Jobtrails</p>
+      </div>
+    </div>
+  </body>
+</html>
